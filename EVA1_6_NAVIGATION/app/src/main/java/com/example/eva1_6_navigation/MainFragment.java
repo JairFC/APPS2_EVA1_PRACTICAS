@@ -33,14 +33,20 @@ public class MainFragment extends Fragment {
         btnBlue = view.findViewById(R.id.btnblue);
         btnRed = view.findViewById(R.id.btnred);
 
-        btnBlue.setOnClickListener(new View.OnClickListener() {
+        btnRed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_mainFragment2_to_redFragment2);
+                Bundle bundle = new Bundle();
+                bundle.putString("Prueba","Hello Hell!!");
+               MainFragmentDirections.ActionMainFragment2ToRedFragment2 action =
+                       MainFragmentDirections.actionMainFragment2ToRedFragment2();
+             //  action.setMiValor(99999);
+               navController.navigate(action);
+                // navController.navigate(R.id.action_mainFragment2_to_redFragment2, bundle);
             }
         });
 
-        btnRed.setOnClickListener(new View.OnClickListener() {
+        btnBlue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.action_mainFragment2_to_blueFragment2);

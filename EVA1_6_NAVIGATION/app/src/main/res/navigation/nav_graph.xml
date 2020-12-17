@@ -11,10 +11,20 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment2_to_redFragment2"
-            app:destination="@id/redFragment2" />
+            app:destination="@id/redFragment2"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            />
         <action
             android:id="@+id/action_mainFragment2_to_blueFragment2"
-            app:destination="@id/blueFragment2" />
+            app:destination="@id/blueFragment2"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_left"
+            />
     </fragment>
     <fragment
         android:id="@+id/blueFragment2"
@@ -25,5 +35,10 @@
         android:id="@+id/redFragment2"
         android:name="com.example.eva1_6_navigation.RedFragment"
         android:label="fragment_red"
-        tools:layout="@layout/fragment_red" />
+        tools:layout="@layout/fragment_red" >
+        <argument
+            android:name=" mi_valor"
+            app:argType="integer"
+            android:defaultValue="10000" />
+    </fragment>
 </navigation>
